@@ -12,7 +12,7 @@
 
 @interface HYPAccountList : NSObject
 
-+ (void)savaAcountsWithAccount:(HYPAccount *)account;
++ (BOOL)savaAcountsWithAccount:(HYPAccount *)account;
 + (HYPAccount *)account;
 
 @end

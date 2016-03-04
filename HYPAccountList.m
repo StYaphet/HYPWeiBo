@@ -11,15 +11,19 @@
 
 @implementation HYPAccountList
 
-+ (void)savaAcountsWithAccount:(HYPAccount *)account{
++ (BOOL)savaAcountsWithAccount:(HYPAccount *)account{
     
     NSArray *documentDictionaries = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     
     NSString *documentDictionary = [documentDictionaries firstObject];
     
-    NSString *path = [documentDictionary stringByAppendingString:@"account.archive"];
+    NSString *path = [documentDictionary stringByAppendingPathComponent:@"account.archive"];
     
-    [NSKeyedArchiver archiveRootObject:account toFile:path];
+    NSLog(@"保存account");
+    
+    return [NSKeyedArchiver archiveRootObject:account toFile:path];
+    
+    
     
 }
 
@@ -29,9 +33,11 @@
     
     NSString *documentDictionary = [documentDictionaries firstObject];
     
-    NSString *path = [documentDictionary stringByAppendingString:@"account.archive"];
+    NSString *path = [documentDictionary stringByAppendingPathComponent:@"account.archive"];
     
     HYPAccount *account = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    
+    NSLog(@"取出Account");
     
     return account;
 }

@@ -8,9 +8,10 @@
 
 #import "HYPHomeTableViewController.h"
 #import "LogInViewController.h"
-#import "HYPDataSource.h"
+#import "HYPAccount.h"
+#import "HYPAccountList.h"
 
-@interface HYPHomeTableViewController ()
+@interface HYPHomeTableViewController () <UITableViewDataSource,UITableViewDelegate>
 
 
 
@@ -28,6 +29,19 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    HYPAccount *account = [HYPAccountList account];
+    
+    NSString *token = account.token;
+    
+    NSLog(@"token是：%@",token);
+    
+    [self getWeiboWithToken:token];
+}
+
 - (void)setNaviItem{
     UIButton *naviItemCenterBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     naviItemCenterBtn.backgroundColor = [UIColor whiteColor];
@@ -38,7 +52,7 @@
     [naviItemCenterBtn addTarget:self action:@selector(touchNaviCenterView:) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.titleView = naviItemCenterBtn;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"发微博" style:UIBarButtonItemStylePlain target:self action:@selector(sendMessage:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"发微博" style:UIBarButtonItemStylePlain target:self action:nil];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"朋友" style:UIBarButtonItemStylePlain target:self action:nil];
 }
 
@@ -46,10 +60,29 @@
     NSLog(@"触摸了navi中间视图");
 }
 
-- (void)sendMessage:(id)sender{
-    UIViewController *testController = [[UIViewController alloc] init];
-    testController.view.backgroundColor = [UIColor whiteColor];
-    [self.navigationController pushViewController:testController animated:YES];
+- (NSDictionary *)getWeiboWithToken:(NSString *)token{
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://api.weibo.com/2/statuses/public_timeline.json?access_token=%@",token];
+    
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *getPublicWeiboSession = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:nil];
+    
+    static NSDictionary *pubilcWeiboJson = nil;
+    
+    NSURLSessionDataTask *pubilcWeiboTask = [getPublicWeiboSession dataTaskWithRequest:request completionHandler:^(NSData *data,NSURLResponse *response,NSError *error){
+        NSDictionary *publicWeibo = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        pubilcWeiboJson = publicWeibo;
+    }];
+    
+    [pubilcWeiboTask resume];
+    
+    NSLog(@"1...%@",pubilcWeiboJson);
+    
+    return pubilcWeiboJson;
 }
 
 - (void)didReceiveMemoryWarning {

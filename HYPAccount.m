@@ -14,6 +14,7 @@
 
 @implementation HYPAccount
 
+
 - (instancetype)initWithToken:(NSString *)token uid:(NSString *)uid expiresIn:(NSString *)expiresIn{
     
     self = [super init];
@@ -22,6 +23,9 @@
         self.token = token;
         self.uid = uid;
         self.expiresIn = expiresIn;
+        int timeInterval = [expiresIn intValue];
+        self.timeOut = [NSDate dateWithTimeIntervalSinceNow:timeInterval];
+
     }
     
     return self;
@@ -32,6 +36,7 @@
     [aCoder encodeObject:self.token forKey:@"token"];
     [aCoder encodeObject:self.uid forKey:@"uid"];
     [aCoder encodeObject:self.expiresIn forKey:@"expiresIn"];
+    [aCoder encodeObject:self.timeOut forKey:@"timeOut"];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
@@ -40,7 +45,11 @@
         _token = [aDecoder decodeObjectForKey:@"token"];
         _uid = [aDecoder decodeObjectForKey:@"uid"];
         _expiresIn = [aDecoder decodeObjectForKey:@"expiresIn"];
+        _timeOut = [aDecoder decodeObjectForKey:@"timeOut"];
     }
+    
+    NSLog(@"解固后的token为：%@",_token);
+    
     return self;
 }
 

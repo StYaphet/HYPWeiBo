@@ -13,6 +13,7 @@
 @property (nonatomic,copy) NSString *token;
 @property (nonatomic,copy) NSString *uid;
 @property (nonatomic,copy) NSString *expiresIn;
+@property (nonatomic,strong) NSDate *timeOut;
 
 - (instancetype)initWithToken:(NSString *)token uid:(NSString *)uid expiresIn:(NSString *)expiresIn;
 

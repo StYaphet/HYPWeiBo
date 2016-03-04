@@ -10,12 +10,15 @@
 #import "HYPDataSource.h"
 #import "HYPAccount.h"
 #import "HYPAccountList.h"
+#import "MBProgressHUD.h"
 
 
-@interface LogInViewController () <UIWebViewDelegate>
+@interface LogInViewController () <UIWebViewDelegate,MBProgressHUDDelegate>
 
 {
     UIWebView *_webView;
+    MBProgressHUD *HUD;
+    
 }
 
 @property (nonatomic) NSURLSession *session;
@@ -57,8 +60,14 @@
 - (void)addAutherView{
     [self.navigationController setNavigationBarHidden:YES];
     NSURLRequest *oauthURL = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.weibo.com/oauth2/authorize?client_id=2406184446&redirect_uri=http://www.baidu.com/&response_type=code"]];
-    [_webView loadRequest:oauthURL];
     
+    //设置进度条
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.labelText = @"稍等哦";
+    //加载页面时显示进度条
+    [_webView loadRequest:oauthURL];
+    [HUD show:YES];
 }
 
 
@@ -67,6 +76,7 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     
+    [HUD removeFromSuperview];
     NSString *urlString = webView.request.URL.absoluteString;
     
     if (![urlString  isEqual: @"https://api.weibo.com/oauth2/authorize?client_id=2406184446&redirect_uri=http://www.baidu.com/&response_type=code"]) {
@@ -92,7 +102,7 @@
     }
 }
 
-//获取assesstoken，accesstouken的存放？
+//获取assesstoken，accesstouken的固化到文件沙盒中，使用的时候从沙盒中取出
 
 - (void)getTokenWithCode:(NSString *)code{
     NSString *reqString = @"https://api.weibo.com/oauth2/access_token";
@@ -108,9 +118,6 @@
     NSData *bodyData = [bodyStr dataUsingEncoding:NSUTF8StringEncoding];
     
     [req setHTTPBody:bodyData];
-
-    
-
     
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithRequest:req completionHandler:^(NSData *data,NSURLResponse *response,NSError *error){
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
@@ -118,6 +125,7 @@
         NSString *uid = [jsonObject objectForKey:@"uid"];
         NSString *expiresIn = [jsonObject objectForKey:@"expiresIn"];
         HYPAccount *account = [[HYPAccount alloc] initWithToken:token uid:uid expiresIn:expiresIn];
+    
         
         [HYPAccountList savaAcountsWithAccount:account];
         
