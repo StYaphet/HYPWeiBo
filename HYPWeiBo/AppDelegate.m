@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "testViewController.h"
+#import "HYPHomeTableViewController.h"
+#import "LogInViewController.h"
+#import "HYPNavigitionViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +20,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    
+    HYPHomeTableViewController *homeVC = [[HYPHomeTableViewController alloc] init];
+    
+    HYPNavigitionViewController *nvc = [[HYPNavigitionViewController alloc] initWithRootViewController:homeVC];
+    
+    nvc.tabBarItem.title = @"主页";
+    
+    UITabBarController *tabVC = [[UITabBarController alloc]init];
+    
+    tabVC.viewControllers = @[nvc];
+    
+    self.window.rootViewController = tabVC;
+    
     return YES;
 }
 

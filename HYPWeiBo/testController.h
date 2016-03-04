@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  testController.h
 //  HYPWeiBo
 //
 //  Created by 郝一鹏 on 16/2/27.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface testController : UINavigationController
 
 @end
-

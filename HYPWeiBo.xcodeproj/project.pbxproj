@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E0484E81C87D68700DDDF54 /* HYPHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0484E61C87D68700DDDF54 /* HYPHomeTableViewController.m */; };
+		6E0484EB1C87DABA00DDDF54 /* HYPhomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E0484EA1C87DABA00DDDF54 /* HYPhomeCell.xib */; };
+		6E0484EE1C87FB8200DDDF54 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0484ED1C87FB8200DDDF54 /* LogInViewController.m */; };
+		6E0484F41C88396C00DDDF54 /* HYPDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0484F31C88396C00DDDF54 /* HYPDataSource.m */; };
+		6E0484F71C888CE200DDDF54 /* HYPNavigitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0484F61C888CE200DDDF54 /* HYPNavigitionViewController.m */; };
 		6E1C19F01C81EE9A00B41224 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C19EF1C81EE9A00B41224 /* main.m */; };
 		6E1C19F31C81EE9A00B41224 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C19F21C81EE9A00B41224 /* AppDelegate.m */; };
-		6E1C19F61C81EE9A00B41224 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C19F51C81EE9A00B41224 /* ViewController.m */; };
 		6E1C19F91C81EE9A00B41224 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1C19F71C81EE9A00B41224 /* Main.storyboard */; };
 		6E1C19FB1C81EE9A00B41224 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E1C19FA1C81EE9A00B41224 /* Assets.xcassets */; };
 		6E1C19FE1C81EE9A00B41224 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1C19FC1C81EE9A00B41224 /* LaunchScreen.storyboard */; };
 		6E1C1A091C81EE9B00B41224 /* HYPWeiBoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C1A081C81EE9B00B41224 /* HYPWeiBoTests.m */; };
 		6E1C1A141C81EE9B00B41224 /* HYPWeiBoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C1A131C81EE9B00B41224 /* HYPWeiBoUITests.m */; };
+		6E1C1A261C81F01C00B41224 /* testViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C1A251C81F01C00B41224 /* testViewController.m */; };
+		6E1C1A291C81F60500B41224 /* testController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C1A281C81F60500B41224 /* testController.m */; };
+		6E1C1A2B1C81FB1D00B41224 /* mm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6E1C1A2A1C81FB1D00B41224 /* mm.jpg */; };
+		6E1C1A2D1C81FC7500B41224 /* Hypno.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1C1A2C1C81FC7400B41224 /* Hypno.png */; };
+		6E1C1A2F1C81FC9E00B41224 /* Hypno@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1C1A2E1C81FC9E00B41224 /* Hypno@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +44,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E0484E51C87D68700DDDF54 /* HYPHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYPHomeTableViewController.h; sourceTree = "<group>"; };
+		6E0484E61C87D68700DDDF54 /* HYPHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYPHomeTableViewController.m; sourceTree = "<group>"; };
+		6E0484EA1C87DABA00DDDF54 /* HYPhomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HYPhomeCell.xib; sourceTree = "<group>"; };
+		6E0484EC1C87FB8200DDDF54 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		6E0484ED1C87FB8200DDDF54 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		6E0484F21C88396C00DDDF54 /* HYPDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYPDataSource.h; sourceTree = "<group>"; };
+		6E0484F31C88396C00DDDF54 /* HYPDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYPDataSource.m; sourceTree = "<group>"; };
+		6E0484F51C888CE200DDDF54 /* HYPNavigitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYPNavigitionViewController.h; sourceTree = "<group>"; };
+		6E0484F61C888CE200DDDF54 /* HYPNavigitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYPNavigitionViewController.m; sourceTree = "<group>"; };
 		6E1C19EB1C81EE9A00B41224 /* HYPWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYPWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1C19EF1C81EE9A00B41224 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6E1C19F11C81EE9A00B41224 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6E1C19F21C81EE9A00B41224 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6E1C19F41C81EE9A00B41224 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6E1C19F51C81EE9A00B41224 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6E1C19F81C81EE9A00B41224 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E1C19FA1C81EE9A00B41224 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E1C19FD1C81EE9A00B41224 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +67,13 @@
 		6E1C1A0F1C81EE9B00B41224 /* HYPWeiBoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HYPWeiBoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1C1A131C81EE9B00B41224 /* HYPWeiBoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYPWeiBoUITests.m; sourceTree = "<group>"; };
 		6E1C1A151C81EE9B00B41224 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E1C1A241C81F01C00B41224 /* testViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
+		6E1C1A251C81F01C00B41224 /* testViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testViewController.m; sourceTree = "<group>"; };
+		6E1C1A271C81F60500B41224 /* testController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testController.h; sourceTree = "<group>"; };
+		6E1C1A281C81F60500B41224 /* testController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testController.m; sourceTree = "<group>"; };
+		6E1C1A2A1C81FB1D00B41224 /* mm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mm.jpg; sourceTree = "<group>"; };
+		6E1C1A2C1C81FC7400B41224 /* Hypno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hypno.png; sourceTree = "<group>"; };
+		6E1C1A2E1C81FC9E00B41224 /* Hypno@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hypno@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +101,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E0484E41C87D61A00DDDF54 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				6E1C1A241C81F01C00B41224 /* testViewController.h */,
+				6E1C1A251C81F01C00B41224 /* testViewController.m */,
+				6E1C1A271C81F60500B41224 /* testController.h */,
+				6E1C1A281C81F60500B41224 /* testController.m */,
+			);
+			name = Test;
+			sourceTree = "<group>";
+		};
 		6E1C19E21C81EE9A00B41224 = {
 			isa = PBXGroup;
 			children = (
+				6E0484F51C888CE200DDDF54 /* HYPNavigitionViewController.h */,
+				6E0484F61C888CE200DDDF54 /* HYPNavigitionViewController.m */,
+				6E0484E51C87D68700DDDF54 /* HYPHomeTableViewController.h */,
+				6E0484E61C87D68700DDDF54 /* HYPHomeTableViewController.m */,
+				6E0484F21C88396C00DDDF54 /* HYPDataSource.h */,
+				6E0484F31C88396C00DDDF54 /* HYPDataSource.m */,
+				6E0484EC1C87FB8200DDDF54 /* LogInViewController.h */,
+				6E0484ED1C87FB8200DDDF54 /* LogInViewController.m */,
+				6E0484EA1C87DABA00DDDF54 /* HYPhomeCell.xib */,
 				6E1C19ED1C81EE9A00B41224 /* HYPWeiBo */,
 				6E1C1A071C81EE9B00B41224 /* HYPWeiBoTests */,
 				6E1C1A121C81EE9B00B41224 /* HYPWeiBoUITests */,
@@ -101,14 +144,9 @@
 		6E1C19ED1C81EE9A00B41224 /* HYPWeiBo */ = {
 			isa = PBXGroup;
 			children = (
+				6E0484E41C87D61A00DDDF54 /* Test */,
 				6E1C19F11C81EE9A00B41224 /* AppDelegate.h */,
 				6E1C19F21C81EE9A00B41224 /* AppDelegate.m */,
-				6E1C19F41C81EE9A00B41224 /* ViewController.h */,
-				6E1C19F51C81EE9A00B41224 /* ViewController.m */,
-				6E1C19F71C81EE9A00B41224 /* Main.storyboard */,
-				6E1C19FA1C81EE9A00B41224 /* Assets.xcassets */,
-				6E1C19FC1C81EE9A00B41224 /* LaunchScreen.storyboard */,
-				6E1C19FF1C81EE9A00B41224 /* Info.plist */,
 				6E1C19EE1C81EE9A00B41224 /* Supporting Files */,
 			);
 			path = HYPWeiBo;
@@ -117,6 +155,13 @@
 		6E1C19EE1C81EE9A00B41224 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6E1C1A2A1C81FB1D00B41224 /* mm.jpg */,
+				6E1C1A2C1C81FC7400B41224 /* Hypno.png */,
+				6E1C1A2E1C81FC9E00B41224 /* Hypno@2x.png */,
+				6E1C19F71C81EE9A00B41224 /* Main.storyboard */,
+				6E1C19FA1C81EE9A00B41224 /* Assets.xcassets */,
+				6E1C19FC1C81EE9A00B41224 /* LaunchScreen.storyboard */,
+				6E1C19FF1C81EE9A00B41224 /* Info.plist */,
 				6E1C19EF1C81EE9A00B41224 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -249,6 +294,10 @@
 				6E1C19FE1C81EE9A00B41224 /* LaunchScreen.storyboard in Resources */,
 				6E1C19FB1C81EE9A00B41224 /* Assets.xcassets in Resources */,
 				6E1C19F91C81EE9A00B41224 /* Main.storyboard in Resources */,
+				6E1C1A2F1C81FC9E00B41224 /* Hypno@2x.png in Resources */,
+				6E0484EB1C87DABA00DDDF54 /* HYPhomeCell.xib in Resources */,
+				6E1C1A2B1C81FB1D00B41224 /* mm.jpg in Resources */,
+				6E1C1A2D1C81FC7500B41224 /* Hypno.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,9 +322,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E1C19F61C81EE9A00B41224 /* ViewController.m in Sources */,
+				6E0484F71C888CE200DDDF54 /* HYPNavigitionViewController.m in Sources */,
+				6E1C1A291C81F60500B41224 /* testController.m in Sources */,
 				6E1C19F31C81EE9A00B41224 /* AppDelegate.m in Sources */,
+				6E0484EE1C87FB8200DDDF54 /* LogInViewController.m in Sources */,
+				6E1C1A261C81F01C00B41224 /* testViewController.m in Sources */,
+				6E0484E81C87D68700DDDF54 /* HYPHomeTableViewController.m in Sources */,
 				6E1C19F01C81EE9A00B41224 /* main.m in Sources */,
+				6E0484F41C88396C00DDDF54 /* HYPDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +553,7 @@
 				6E1C1A1A1C81EE9B00B41224 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E1C1A1B1C81EE9B00B41224 /* Build configuration list for PBXNativeTarget "HYPWeiBoTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +562,7 @@
 				6E1C1A1D1C81EE9B00B41224 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E1C1A1E1C81EE9B00B41224 /* Build configuration list for PBXNativeTarget "HYPWeiBoUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +571,7 @@
 				6E1C1A201C81EE9B00B41224 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
