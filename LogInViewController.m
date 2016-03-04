@@ -20,7 +20,7 @@
 
 - (instancetype)init{
     self = [super init];
-    
+    //初始化一个NSURLSession
     if (self) {
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
         _session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:nil];
@@ -29,12 +29,14 @@
     return self;
 }
 
+//视图加载完毕后，将webview加入视图层次结构
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadWebView];
     
 }
 
+//设置webview，并加入视图层次结构，完毕后使授权页面加载到webview里
 - (void)loadWebView{
     UIWebView *tWebView = [[UIWebView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -46,12 +48,14 @@
 }
 
 
+//在webview中加载授权页面
 - (void)auther{
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.weibo.com/oauth2/authorize?client_id=2406184446&redirect_uri=http://www.baidu.com/&response_type=code"]];
     [self.webView loadRequest:request];
     
 }
 
+//webview中的内容加载完毕后触发该方法去向服务器索取申请assesstoken所需的code
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     
@@ -70,6 +74,8 @@
         [self getTokenWithCode:code];
     }
 }
+
+//获取assesstoken，accesstouken的存放？
 
 - (void)getTokenWithCode:(NSString *)code{
     NSString *reqString = @"https://api.weibo.com/oauth2/access_token";
