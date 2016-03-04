@@ -64,16 +64,16 @@
     [logVC hidesBottomBarWhenPushed];
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    NSLog(@"viewWillAppear:");
-    [self loadData];
-}
-
-- (void)loadData{
-    NSLog(@"loadData");
-    NSDictionary *pubilcWeibo = [[HYPDataSource sharedStore] getPublicWeibo];
-    NSLog(@"%@",pubilcWeibo);
-}
+//- (void)viewWillAppear:(BOOL)animated{
+//    NSLog(@"viewWillAppear:");
+//    [self loadData];
+//}
+//
+//- (void)loadData{
+//    NSLog(@"loadData");
+//    NSDictionary *pubilcWeibo = [[HYPDataSource sharedStore] getPublicWeibo];
+//    NSLog(@"%@",pubilcWeibo);
+//}
 
 #pragma mark - Table view data source
 

@@ -12,6 +12,8 @@
 		6E0484EE1C87FB8200DDDF54 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0484ED1C87FB8200DDDF54 /* LogInViewController.m */; };
 		6E0484F41C88396C00DDDF54 /* HYPDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0484F31C88396C00DDDF54 /* HYPDataSource.m */; };
 		6E0484F71C888CE200DDDF54 /* HYPNavigitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0484F61C888CE200DDDF54 /* HYPNavigitionViewController.m */; };
+		6E0484FA1C892A1B00DDDF54 /* HYPAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0484F91C892A1B00DDDF54 /* HYPAccount.m */; };
+		6E0484FD1C892E4300DDDF54 /* HYPAccountList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0484FC1C892E4300DDDF54 /* HYPAccountList.m */; };
 		6E1C19F01C81EE9A00B41224 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C19EF1C81EE9A00B41224 /* main.m */; };
 		6E1C19F31C81EE9A00B41224 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C19F21C81EE9A00B41224 /* AppDelegate.m */; };
 		6E1C19F91C81EE9A00B41224 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1C19F71C81EE9A00B41224 /* Main.storyboard */; };
@@ -53,6 +55,10 @@
 		6E0484F31C88396C00DDDF54 /* HYPDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYPDataSource.m; sourceTree = "<group>"; };
 		6E0484F51C888CE200DDDF54 /* HYPNavigitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYPNavigitionViewController.h; sourceTree = "<group>"; };
 		6E0484F61C888CE200DDDF54 /* HYPNavigitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYPNavigitionViewController.m; sourceTree = "<group>"; };
+		6E0484F81C892A1B00DDDF54 /* HYPAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYPAccount.h; sourceTree = "<group>"; };
+		6E0484F91C892A1B00DDDF54 /* HYPAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYPAccount.m; sourceTree = "<group>"; };
+		6E0484FB1C892E4300DDDF54 /* HYPAccountList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYPAccountList.h; sourceTree = "<group>"; };
+		6E0484FC1C892E4300DDDF54 /* HYPAccountList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYPAccountList.m; sourceTree = "<group>"; };
 		6E1C19EB1C81EE9A00B41224 /* HYPWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYPWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1C19EF1C81EE9A00B41224 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6E1C19F11C81EE9A00B41224 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -123,6 +129,10 @@
 				6E0484F31C88396C00DDDF54 /* HYPDataSource.m */,
 				6E0484EC1C87FB8200DDDF54 /* LogInViewController.h */,
 				6E0484ED1C87FB8200DDDF54 /* LogInViewController.m */,
+				6E0484F81C892A1B00DDDF54 /* HYPAccount.h */,
+				6E0484F91C892A1B00DDDF54 /* HYPAccount.m */,
+				6E0484FB1C892E4300DDDF54 /* HYPAccountList.h */,
+				6E0484FC1C892E4300DDDF54 /* HYPAccountList.m */,
 				6E0484EA1C87DABA00DDDF54 /* HYPhomeCell.xib */,
 				6E1C19ED1C81EE9A00B41224 /* HYPWeiBo */,
 				6E1C1A071C81EE9B00B41224 /* HYPWeiBoTests */,
@@ -324,8 +334,10 @@
 			files = (
 				6E0484F71C888CE200DDDF54 /* HYPNavigitionViewController.m in Sources */,
 				6E1C1A291C81F60500B41224 /* testController.m in Sources */,
+				6E0484FA1C892A1B00DDDF54 /* HYPAccount.m in Sources */,
 				6E1C19F31C81EE9A00B41224 /* AppDelegate.m in Sources */,
 				6E0484EE1C87FB8200DDDF54 /* LogInViewController.m in Sources */,
+				6E0484FD1C892E4300DDDF54 /* HYPAccountList.m in Sources */,
 				6E1C1A261C81F01C00B41224 /* testViewController.m in Sources */,
 				6E0484E81C87D68700DDDF54 /* HYPHomeTableViewController.m in Sources */,
 				6E1C19F01C81EE9A00B41224 /* main.m in Sources */,

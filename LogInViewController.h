@@ -11,8 +11,9 @@
 @interface LogInViewController : UIViewController
 
 
-@property (nonatomic,weak) UIWebView *webView;
 @property (nonatomic,weak) NSString *token;
+
+- (void)addAutherView;
 
 
 @end

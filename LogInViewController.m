@@ -8,9 +8,15 @@
 
 #import "LogInViewController.h"
 #import "HYPDataSource.h"
+#import "HYPAccount.h"
+#import "HYPAccountList.h"
 
 
 @interface LogInViewController () <UIWebViewDelegate>
+
+{
+    UIWebView *_webView;
+}
 
 @property (nonatomic) NSURLSession *session;
 
@@ -29,44 +35,55 @@
     return self;
 }
 
-//视图加载完毕后，将webview加入视图层次结构
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self loadWebView];
+//设置视图层次结构
+- (void)loadView{
+    [super loadView];
+    _webView = [[UIWebView alloc] init];
+    self.view = _webView;
     
 }
 
 //设置webview，并加入视图层次结构，完毕后使授权页面加载到webview里
-- (void)loadWebView{
-    UIWebView *tWebView = [[UIWebView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+- (void)viewDidLoad{
+    [super viewDidLoad];
     
-//    tWebView.frame = self.view.bounds;
-    tWebView.delegate = self;
-    [self.view addSubview:tWebView];
-    self.webView = tWebView;
-    [self auther];
+    _webView.delegate = self;
+    
+    [self addAutherView];
 }
 
 
 //在webview中加载授权页面
-- (void)auther{
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.weibo.com/oauth2/authorize?client_id=2406184446&redirect_uri=http://www.baidu.com/&response_type=code"]];
-    [self.webView loadRequest:request];
+- (void)addAutherView{
+    [self.navigationController setNavigationBarHidden:YES];
+    NSURLRequest *oauthURL = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.weibo.com/oauth2/authorize?client_id=2406184446&redirect_uri=http://www.baidu.com/&response_type=code"]];
+    [_webView loadRequest:oauthURL];
     
 }
 
+
+#pragma mark - 代理方法
 //webview中的内容加载完毕后触发该方法去向服务器索取申请assesstoken所需的code
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     
     NSString *urlString = webView.request.URL.absoluteString;
     
+    if (![urlString  isEqual: @"https://api.weibo.com/oauth2/authorize?client_id=2406184446&redirect_uri=http://www.baidu.com/&response_type=code"]) {
+        
+        [self.navigationController setNavigationBarHidden:NO];
+        UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithTitle:@"返回授权界面" style:UIBarButtonItemStylePlain target:self action:@selector(addAutherView)];
+        self.navigationItem.leftBarButtonItem = back;
+    }else{
+        [self.navigationController setNavigationBarHidden:YES];
+    }
+    
     NSLog(@"%@",urlString);
     
     NSRange range = [urlString rangeOfString:@"code="];
     
     if (range.length) {
-        [self.webView removeFromSuperview];
+        self.view.hidden = YES;
         
         NSString *code = [urlString substringFromIndex:(range.location + range.length)];
         NSLog(@"%@",code);
@@ -93,13 +110,17 @@
     [req setHTTPBody:bodyData];
 
     
+
+    
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithRequest:req completionHandler:^(NSData *data,NSURLResponse *response,NSError *error){
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        NSString *accessToken = [jsonObject valueForKey:@"access_token"];
-        self.token = accessToken;
-        NSLog(@"%@",self.token);
-        [[NSUserDefaults standardUserDefaults] setObject:self.token forKey:@"token"];
-        NSLog(@"login token: %@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]);
+        NSString *token = [jsonObject objectForKey:@"access_token"];
+        NSString *uid = [jsonObject objectForKey:@"uid"];
+        NSString *expiresIn = [jsonObject objectForKey:@"expiresIn"];
+        HYPAccount *account = [[HYPAccount alloc] initWithToken:token uid:uid expiresIn:expiresIn];
+        
+        [HYPAccountList savaAcountsWithAccount:account];
+        
     }];
     
     [dataTask resume];
