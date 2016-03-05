@@ -62,7 +62,7 @@
 
 - (NSDictionary *)getWeiboWithToken:(NSString *)token{
     
-    NSString *urlString = [NSString stringWithFormat:@"https://api.weibo.com/2/statuses/public_timeline.json?access_token=%@",token];
+    NSString *urlString = [NSString stringWithFormat:@"https://api.weibo.com/2/statuses/friends_timeline.json?access_token=%@&",token];
     
     
     NSURL *url = [NSURL URLWithString:urlString];
@@ -74,13 +74,12 @@
     static NSDictionary *pubilcWeiboJson = nil;
     
     NSURLSessionDataTask *pubilcWeiboTask = [getPublicWeiboSession dataTaskWithRequest:request completionHandler:^(NSData *data,NSURLResponse *response,NSError *error){
+        
         NSDictionary *publicWeibo = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         pubilcWeiboJson = publicWeibo;
     }];
     
     [pubilcWeiboTask resume];
-    
-    NSLog(@"1...%@",pubilcWeiboJson);
     
     return pubilcWeiboJson;
 }
